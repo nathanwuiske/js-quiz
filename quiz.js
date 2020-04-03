@@ -8,6 +8,7 @@ const questionNumber = document.getElementById("question-number");
 
 const questionFooterNumber = document.getElementById("question-footer-number");
 const totalQuestions = document.getElementById("total-questions");
+const outOfQuestions = document.getElementById("out-of-questions");
 
 const answerListContainer = document.getElementById("lists");
 
@@ -112,7 +113,7 @@ function setQuestion() {
 function selectAnswer(e) {
   const selectedAnswer = e.target;
   if (selectedAnswer.dataset.answer == "true") {
-    currentScore += 10;
+    currentScore += 1;
   }
   score.innerText = currentScore;
   if (currentQuestionIndex >= questions.length) {
@@ -130,6 +131,7 @@ function endQuiz() {
   questionContainer.classList.toggle("hide");
   footerContainer.classList.toggle("hide");
   finalScore.innerText = currentScore;
+  outOfQuestions.innerText = questions.length;
 }
 
 let questions = [
