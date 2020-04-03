@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="start-container" class="start-container">
+        <h1>JavaScript Quiz</h1>
+        <button class="start-btn" id="start-btn">Start »</button>
+        <div class="list-cont">
+          <ul>
+            <li>* This quiz contains 20 questions in total.</li>
+            <li>* You will have a time limit of 10 minutes.</li>
+            <li>* Your final score will be displayed once completed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="question-container" class="question-container hide">
+        <h1>Question <span id="question-number"></span></h1>
+        <p id="question-title" class="question-text"></p>
+        <pre id="code-container" class="prettyprint linenums"></pre>
+
+        <div id="lists"></div>
+      </div>
+
+      <div id="quiz-end" class="hide">
+        <h1>QUIZ ENDED</h1>
+        <p class="final-score-p">
+          Your score was <span id="final-score"></span>
+        </p>
+        <button class="start-btn" onClick="restartQuiz()">Try Again</button>
+      </div>
+
+      <div id="footer-container" class="footer hide">
+        <span id="timer">5:00</span>
+        <p>Score: <span id="score">0</span></p>
+
+        <p>
+          <span id="question-footer-number"></span> /
+          <span id="total-questions"></span>
+        </p>
+      </div>
+    </div>
+    <script src="quiz.js"></script>
+  </body>
+</html>
